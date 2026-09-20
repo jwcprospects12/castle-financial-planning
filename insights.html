@@ -41,7 +41,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <header style="position:sticky;top:0;z-index:60;background:#FFFFFF;border-bottom:1px solid #E6E9EE">
   <div style="background:#12294D;color:#C8D4E6">
     <div style="width:min(1200px,92vw);margin:0 auto;display:flex;flex-wrap:wrap;gap:8px 24px;align-items:center;justify-content:flex-end;padding:8px 0;font-size:13px;letter-spacing:.01em">
-      <span style="color:#8FA6C4">Independent. Impartial. Fully guaranteed advice.</span>
+      <sc-if value="{{ isWide }}" hint-placeholder-val="{{ true }}"><span style="color:#8FA6C4">Independent. Impartial. Fully guaranteed advice.</span></sc-if>
       <a href="tel:+441245526328" style="display:flex;gap:8px;align-items:baseline;white-space:nowrap"><span style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#8FA6C4">Chelmsford</span><span style="color:#FFFFFF;font-weight:600">01245 526328</span></a>
       <a href="tel:+441279293216" style="display:flex;gap:8px;align-items:baseline;white-space:nowrap"><span style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#8FA6C4">Bishop's Stortford</span><span style="color:#FFFFFF;font-weight:600">01279 293216</span></a>
     </div>
@@ -50,6 +50,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <a href="index.html" style="display:block;flex:0 0 auto">
       <img src="assets/logos/logo-14-CFP_Full_Logo_-_Landscape_WHITE_Background.png" alt="Castle Financial Planning" style="display:block;height:52px;width:auto">
     </a>
+    <sc-if value="{{ isNarrow }}" hint-placeholder-val="{{ false }}">
+      <div style="display:flex;align-items:center;gap:10px">
+        <a href="tel:+441245526328" style="display:flex;align-items:center;gap:8px;height:46px;padding:0 16px;border:1px solid #1B3A6B;border-radius:3px;color:#1B3A6B;font-size:14px;font-weight:600"><span style="display:block;width:9px;height:9px;background:#00A651;border-radius:50%"></span>Call</a>
+        <a href="#" onClick="{{ menuToggle }}" aria-label="Menu" style="display:flex;flex-direction:column;justify-content:center;gap:5px;width:46px;height:46px;padding:0 11px;background:#1B3A6B;border-radius:3px">
+          <span style="display:block;height:2px;background:#FFFFFF"></span>
+          <span style="display:block;height:2px;background:#FFFFFF"></span>
+          <span style="display:block;height:2px;background:#FFFFFF"></span>
+        </a>
+      </div>
+    </sc-if>
+    <sc-if value="{{ isWide }}" hint-placeholder-val="{{ true }}">
     <nav style="display:flex;align-items:center;gap:4px;flex-wrap:wrap;justify-content:flex-end">
       <a href="index.html" style="padding:10px 12px;font-size:14px;font-weight:500;color:#1D2B3E;border-radius:4px" style-hover="background:#F1F4F8;color:#1B3A6B">Home</a>
       <div onMouseEnter="{{ svcOn }}" onMouseLeave="{{ svcOff }}" style="position:relative">
@@ -93,7 +104,31 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <a href="contact.html" style="margin-left:8px;padding:12px 20px;background:#1B3A6B;color:#FFFFFF;font-size:14px;font-weight:600;border-radius:3px" style-hover="background:#00A651;color:#FFFFFF">Enquire Today</a>
       <a href="tel:+441245526328" style="display:flex;align-items:center;gap:9px;padding:11px 18px;border:1px solid #1B3A6B;color:#1B3A6B;font-size:14px;font-weight:600;border-radius:3px;white-space:nowrap" style-hover="background:#1B3A6B;color:#FFFFFF"><span style="display:block;width:9px;height:9px;background:#00A651;border-radius:50%"></span>01245 526328</a>
     </nav>
+    </sc-if>
   </div>
+  <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+    <nav style="border-top:1px solid #E6E9EE;background:#FFFFFF;max-height:70vh;overflow-y:auto;animation:cfpRise .18s ease both">
+      <div style="width:min(1200px,92vw);margin:0 auto;display:flex;flex-direction:column;padding:12px 0 24px">
+        <a href="index.html" style="padding:15px 0;font-size:16px;font-weight:600;color:#12294D;border-bottom:1px solid #EEF1F5">Home</a>
+        <span style="display:block;padding:20px 0 8px;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#8B98A8">Services</span>
+        <a href="retirement-planning.html" style="padding:15px 0;font-size:16px;font-weight:600;color:#12294D;border-bottom:1px solid #EEF1F5">Retirement Planning &amp; Pensions</a>
+        <a href="savings-and-investments.html" style="padding:15px 0;font-size:16px;font-weight:600;color:#12294D;border-bottom:1px solid #EEF1F5">Savings &amp; Investments</a>
+        <a href="inheritance-tax-planning.html" style="padding:15px 0;font-size:16px;font-weight:600;color:#12294D;border-bottom:1px solid #EEF1F5">Inheritance Tax Planning</a>
+        <a href="pension-review-service.html" style="padding:15px 0;font-size:16px;font-weight:600;color:#12294D;border-bottom:1px solid #EEF1F5">Pension Review Service</a>
+        <span style="display:block;padding:20px 0 8px;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#8B98A8">About</span>
+        <a href="about.html" style="padding:15px 0;font-size:16px;font-weight:600;color:#12294D;border-bottom:1px solid #EEF1F5">About Us</a>
+        <a href="our-history.html" style="padding:15px 0;font-size:16px;font-weight:600;color:#12294D;border-bottom:1px solid #EEF1F5">Our History</a>
+        <a href="our-values.html" style="padding:15px 0;font-size:16px;font-weight:600;color:#12294D;border-bottom:1px solid #EEF1F5">Our Values</a>
+        <a href="our-advice-fees.html" style="padding:15px 0;font-size:16px;font-weight:600;color:#12294D;border-bottom:1px solid #EEF1F5">Our Advice Fees</a>
+        <a href="faqs.html" style="padding:15px 0;font-size:16px;font-weight:600;color:#12294D;border-bottom:1px solid #EEF1F5">FAQs</a>
+        <span style="display:block;padding:20px 0 8px;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#8B98A8">More</span>
+        <a href="news.html" style="padding:15px 0;font-size:16px;font-weight:600;color:#12294D;border-bottom:1px solid #EEF1F5">Latest News</a>
+        <a href="insights.html" style="padding:15px 0;font-size:16px;font-weight:600;color:#12294D;border-bottom:1px solid #EEF1F5">Insights</a>
+        <a href="testimonials.html" style="padding:15px 0;font-size:16px;font-weight:600;color:#12294D;border-bottom:1px solid #EEF1F5">Testimonials</a>
+        <a href="contact.html" style="margin-top:22px;padding:16px 24px;background:#1B3A6B;color:#FFFFFF;font-size:16px;font-weight:600;text-align:center;border-radius:3px">Enquire Today</a>
+      </div>
+    </nav>
+  </sc-if>
 </header>
 
 <main>
@@ -842,10 +877,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <figcaption style="font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#0B8B43">{{ q.name }}</figcaption>
         </figure>
       </sc-for>
-      <div style="display:flex;flex-direction:column;justify-content:center;border:1px dashed #C3CCD8;background:none;padding:34px 30px;min-height:220px">
-        <p style="margin:0 0 10px;font:600 11px Archivo,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#8B98A8">Space for more</p>
-        <p style="margin:0;font-size:15px;line-height:1.6;color:#8B98A8">Drop further client reviews in here as they come in — the grid reflows on its own.</p>
-      </div>
     </div>
   </section>
 </div>
@@ -1384,13 +1415,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <sc-if value="{{ stickyCta }}" hint-placeholder-val="{{ true }}">
 <div style="position:fixed;left:0;right:0;bottom:0;z-index:70;background:#1B3A6B;border-top:2px solid #00A651">
   <div style="width:min(1200px,92vw);margin:0 auto;display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;justify-content:space-between;padding:12px 0">
+    <sc-if value="{{ isWide }}" hint-placeholder-val="{{ true }}">
     <div style="display:flex;align-items:center;gap:14px">
       <img src="assets/logos/logo-23-CFP_Motif_-_Mono_WHITE.png" alt="" style="display:block;height:26px;width:auto;flex:0 0 auto">
       <p style="margin:0;font-size:14.5px;color:#D7E0EC">Free, no-obligation initial consultation — no fees unless you ask me to act.</p>
     </div>
-    <div style="display:flex;gap:10px;align-items:center">
-      <a href="tel:+441245526328" style="padding:10px 18px;border:1px solid rgba(255,255,255,.45);color:#FFFFFF;font-size:14px;font-weight:600;border-radius:3px;white-space:nowrap" style-hover="background:rgba(255,255,255,.12);color:#FFFFFF">01245 526328</a>
-      <a href="contact.html" style="padding:10px 18px;background:#FFFFFF;color:#12294D;font-size:14px;font-weight:600;border-radius:3px" style-hover="background:#00A651;color:#FFFFFF">Book a call</a>
+    </sc-if>
+    <div style="display:flex;gap:10px;align-items:center;flex:1;justify-content:flex-end">
+      <a href="tel:+441245526328" style="flex:1;max-width:220px;text-align:center;padding:12px 18px;border:1px solid rgba(255,255,255,.45);color:#FFFFFF;font-size:14px;font-weight:600;border-radius:3px;white-space:nowrap" style-hover="background:rgba(255,255,255,.12);color:#FFFFFF">01245 526328</a>
+      <a href="contact.html" style="flex:1;max-width:220px;text-align:center;padding:12px 18px;background:#FFFFFF;color:#12294D;font-size:14px;font-weight:600;border-radius:3px;white-space:nowrap" style-hover="background:#00A651;color:#FFFFFF">Book a call</a>
     </div>
   </div>
 </div>
@@ -1467,7 +1500,7 @@ const QUOTES = [
 ];
 
 class Component extends DCLogic {
-  state = { page:'home', svcOpen:false, aboutOpen:false, gate:null, gateSent:false, sent:false, panelSent:false, cookieChoice:null, cookieReady:false };
+  state = { page:'home', narrow:false, menuOpen:false, svcOpen:false, aboutOpen:false, gate:null, gateSent:false, sent:false, panelSent:false, cookieChoice:null, cookieReady:false };
 
   static get ROUTES() {
     return {
@@ -1521,7 +1554,7 @@ class Component extends DCLogic {
     if (push && window.location.hash !== target) window.location.hash = target;
     const title = Component.TITLES[page];
     if (title) document.title = title;
-    this.setState({ page, svcOpen:false, aboutOpen:false }, () => window.scrollTo(0, 0));
+    this.setState({ page, svcOpen:false, aboutOpen:false, menuOpen:false }, () => window.scrollTo(0, 0));
   }
 
   nav(page) {
@@ -1550,6 +1583,11 @@ class Component extends DCLogic {
     let saved = null;
     try { saved = window.localStorage.getItem('cfp-cookie-consent'); } catch (e) {}
     this.setState({ cookieChoice: saved, cookieReady: true });
+    this._mq = window.matchMedia('(max-width: ' + (window.__CFP_NARROW_AT || 900) + 'px)');
+    this._onMq = () => this.setState({ narrow: this._mq.matches, menuOpen:false });
+    this._onMq();
+    if (this._mq.addEventListener) this._mq.addEventListener('change', this._onMq);
+    else this._mq.addListener(this._onMq);
     this._onHash = () => this.applyPage(this.pageFromHash(), false);
     window.addEventListener('hashchange', this._onHash);
     const initial = this.pageFromHash();
@@ -1559,6 +1597,10 @@ class Component extends DCLogic {
 
   componentWillUnmount() {
     if (this._onHash) window.removeEventListener('hashchange', this._onHash);
+    if (this._mq && this._onMq) {
+      if (this._mq.removeEventListener) this._mq.removeEventListener('change', this._onMq);
+      else this._mq.removeListener(this._onMq);
+    }
   }
 
   setCookieChoice(choice) {
@@ -1601,6 +1643,9 @@ class Component extends DCLogic {
       panelSent: this.state.panelSent,
       panelNotSent: !this.state.panelSent,
       panelSubmit: (e) => { e.preventDefault(); this.setState({ panelSent:true }); },
+      isNarrow: this.state.narrow, isWide: !this.state.narrow,
+      menuOpen: this.state.narrow && this.state.menuOpen,
+      menuToggle: (e) => { if (e && e.preventDefault) e.preventDefault(); this.setState((s) => ({ menuOpen: !s.menuOpen })); },
       isHome: p === 'home', isAbout: p === 'about', isRetirement: p === 'retirement',
       isInvestments: p === 'investments', isIht: p === 'iht', isReview: p === 'review',
       isInsights: p === 'insights', isFees: p === 'fees', isTestimonials: p === 'testimonials',
