@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.castlefinancialplanning.co.uk/sitemap.xml
