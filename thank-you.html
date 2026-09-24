@@ -1132,8 +1132,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   </section>
   <section style="padding:80px 0;background:#FBFAF8">
     <div style="width:min(760px,92vw);margin:0 auto">
-      <p style="margin:0 0 18px;font-size:16.5px;line-height:1.72;color:#4A5A70;text-wrap:pretty">My job is to ensure that you are delighted with the service I provide throughout our dealings.</p>
-      <p style="margin:0 0 18px;font-size:16.5px;line-height:1.72;color:#4A5A70;text-wrap:pretty">However, should you ever feel the need to make a complaint, you can do so in accordance with our complaints procedure:</p>
       <p style="margin:0 0 18px;font-size:16.5px;line-height:1.72;color:#4A5A70;text-wrap:pretty">As an Appointed Representative of New Leaf Distribution Limited, I aim to provide you with a high standard of service. If you are unhappy with any aspect of our service, please get in touch:</p>
       <ul style="margin:0 0 24px;padding:0 0 0 22px;display:flex;flex-direction:column;gap:8px;font-size:16.5px;line-height:1.65;color:#4A5A70">
         <li>Email: <a href="mailto:complaints@newleafgroup.co.uk" style="color:#0B8B43">complaints@newleafgroup.co.uk</a></li>
@@ -1873,7 +1871,13 @@ class Component extends DCLogic {
         const data = new FormData(form);
         data.append('_subject', 'Document request: ' + (g ? g.title : ''));
         data.append('document', g ? g.title : '');
-        fetch('https://formspree.io/f/mqpaqeva', { method:'POST', body:data, headers:{ Accept:'application/json' } }).catch(() => {}).then(() => this.thankYou('document', g ? g.title : ''));
+        fetch('https://formspree.io/f/mqpaqeva', { method:'POST', body:data, headers:{ Accept:'application/json' } }).catch(() => {});
+        const gateTitle = g ? g.title : '';
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: 'guide_request',
+          guide_name: gateTitle
+        });
         this.setState({ gateSent:true });
       },
 
