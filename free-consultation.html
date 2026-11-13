@@ -509,7 +509,7 @@ if (window.CFP_LIVE) {
 
     var data = new FormData(form);
     data.append('_subject', 'Free consultation request (landing page)');
-    fetch('https://formspree.io/f/mgavkozp', { method: 'POST', body: data, headers: { Accept: 'application/json' } })
+    fetch('https://formspree.io/f/xzerdgnb', { method: 'POST', body: data, headers: { Accept: 'application/json' } })
       .then(function (r) { if (!r.ok) throw new Error('bad'); done(); })
       .catch(function () {
         send.disabled = false; send.textContent = 'Request my free call back';
